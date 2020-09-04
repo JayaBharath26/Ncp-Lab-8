@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admission Form</title>
+	<style type="text/css">
+		input{
+			margin-bottom:20px;
+		}
+		select{
+			margin-right:10px;
+		}
+		body{
+			color:steelblue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Admission Form</h1>
+	<form action="Congratulations.html" onsubmit="return Validate();">
+		<label for="name">Name</label><br>
+		<input type="text" id="name" placeholder="Enter your Name"><br>
+		<label for="name">Userame</label><br>
+		<input type="text" id="uname" placeholder="Enter your Username" pattern="[0-9 A-Z a-z]+"><br>
+		<label for="dob">Date Of Birth</label><br>
+		<input type="date" id="dob"><br>
+		<label>Contact Number</label><br>
+		<select id="pin" name="pin">
+			<option value="">Select Your Country Code</option>
+			<option value="+91">+91</option>
+			<option value="+62">+62</option>
+			<option value="+690">+690</option>
+			<option value="+676">+676</option>
+		</select>
+		<input type="tel" placeholder="Enter Your Number" pattern="[0-9]{10}"><br>
+		<label>Sex</label><br>
+		<input type="radio" id="male" name="gender">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender">
+		<label for="female">Female</label><br>
+		<label for="marks">Enter your Marks</label><br>
+		<label for="maths">Maths:</label><br>
+		<input type="number" id="maths" placeholder="Enter Your Maths Marks"><br>
+		<label for="physics">Physics:</label><br>
+		<input type="number" id="physics" placeholder="Enter Your Physics Marks"><br>
+		<label for="chemistry">Chemistry::</label><br>
+		<input type="number" id="chemistry" placeholder="Enter Your Chemistry Marks"><br>
+		<input type="submit" value="Register">
+</body>
+</html>
+<script type="text/javascript">
+	function Validate(){
+		let maths=document.getElementById("maths").value;
+		let physics=document.getElementById("physics").value;
+		let chemistry=document.getElementById("chemistry").value;
+		let valid=false;
+		if(maths>=50){
+			if(physics>=50){
+				if(chemistry>=50){
+					window.alert("Eligible");
+					valid="true";
+					return true;
+				}
+			}
+		}
+		if(valid==false){
+			window.alert("Not Eligible");
+			return false;
+		}
+}
+</script>
